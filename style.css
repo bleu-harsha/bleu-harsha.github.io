@@ -1,0 +1,485 @@
+/* ========================================================
+   1. GLOBAL SYSTEM RESETS & UNIFORM BLUE PALETTE KEYS
+   ======================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Custom cursor image mapping file. Ensure files match paths below */
+    cursor: url('assets/cursor.png') 0 0, url('assets/cursor.cur') 0 0, crosshair !important;
+}
+
+/* Explicit rule matching clickable active surface parameters */
+a, button, input, textarea, .secret-link {
+    cursor: url('assets/pointer.png') 0 0, url('assets/pointer.cur') 0 0, pointer !important;
+}
+
+body {
+    background-color: #00020a;
+    background-image: url('assets/wall.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: "Courier New", Courier, monospace;
+    color: #ffffff;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+}
+
+a {
+    color: #2288ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+    text-shadow: 0 0 8px #0055ff;
+}
+
+.artist-credit-badge {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 10px;
+    color: #4477cc;
+    z-index: 10500;
+}
+.artist-credit-badge a {
+    color: #66a3ff;
+}
+
+/* ========================================================
+   2. REPEATING FIRE DIVIDERS & SOFT SHADOW GLOWS
+   ======================================================== */
+.blue-fire-divider-track {
+    height: 32px;
+    width: 100%;
+    background-image: url('assets/bluefiredivider.gif');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    margin: 15px 0;
+    opacity: 0.85;
+}
+
+.glow-target-stamps h2, .glow-target-interests h2 {
+    text-shadow: 0 0 8px rgba(0, 85, 255, 0.85);
+    box-shadow: 0 0 10px rgba(0, 85, 255, 0.2);
+}
+
+.log-meta strong, .top-nav a {
+    color: #88b5ff;
+    text-shadow: 0 0 6px #0055ff;
+}
+
+.alignment-wash {
+    filter: sepia(100%) hue-rotate(190deg) saturate(180%) contrast(95%) brightness(90%);
+    opacity: 0.85;
+}
+
+/* ========================================================
+   3. MODAL AND CRT MONITOR SCANLINE blankets
+   ======================================================== */
+.gate-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 2, 10, 0.95);
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.gate-card {
+    background: #010614;
+    border: 2px solid #0055ff;
+    box-shadow: 0 0 25px #0033aa;
+    padding: 30px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.gate-title {
+    color: #0077ff;
+    font-family: Impact, sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.gate-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #a0b0cb;
+    margin-bottom: 25px;
+}
+
+.gate-btn {
+    background: #021535;
+    border: 1px solid #0077ff;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.gate-btn:hover {
+    background: #0077ff;
+    color: #000000;
+}
+
+.scanline-blanket {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(5, 12, 30, 0) 65%, rgba(0, 0, 0, 0.35) 35%);
+    background-size: 100% 3px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ========================================================
+   4. LAYOUT GRID CONFIGURATIONS
+   ======================================================== */
+.container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.profile-header {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px dashed #0055ff;
+}
+
+.top-nav {
+    font-size: 12px;
+    color: #5599ff;
+}
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 42% 58%;
+    }
+}
+
+.box {
+    background-color: rgba(0, 3, 15, 0.9);
+    border: 1px solid #0044cc;
+    margin-bottom: 20px;
+}
+
+.box h2 {
+    background: linear-gradient(90deg, #001a57, #00030f);
+    color: #88b5ff;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-bottom: 1px solid #0044cc;
+    font-weight: normal;
+}
+
+.inner-padding {
+    padding: 15px;
+}
+
+/* ========================================================
+   5. PROFILE LAYOUT MATRIX FIXES (17 AND THE CD DISC)
+   ======================================================== */
+.id-flex-content {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.avatar-frame {
+    width: 110px;
+    height: 110px;
+    border: 1px solid #0055ff;
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ps2-disc-wrapper-fixed {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinning-disc {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: discRotation 14s linear infinite;
+}
+
+@keyframes discRotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.meta-disc-graphics {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.geo-text {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+.mood-bar {
+    border-top: 1px solid #0044cc;
+    background-color: #00061a;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+/* ========================================================
+   6. DOOM MODULE (UNWASHED FULL ISOLATION MATRIX)
+   ======================================================== */
+.doom-unwashed-container {
+    border: 1px solid #0055ff;
+    background: #000000 !important;
+}
+
+.doom-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 62.5%;
+    background: #000;
+}
+
+.doom-frame {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: none;
+    filter: none !important; 
+}
+
+.doom-controls-helper {
+    font-size: 11px;
+    color: #4477cc;
+    padding: 6px 10px;
+    text-align: center;
+    background: #02071a;
+    border-top: 1px solid #002266;
+}
+
+/* ========================================================
+   7. INTERIOR DATA GRID TABLES & ENTRIES
+   ======================================================== */
+.interests-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.interests-table td {
+    border: 1px solid #0044cc;
+    padding: 8px 12px;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.cell-label {
+    width: 25%;
+    background-color: #000c2a;
+    color: #66a3ff;
+    font-weight: bold;
+}
+
+.cell-data {
+    background-color: rgba(0, 3, 20, 0.85);
+    color: #dddddd;
+    line-height: 1.5;
+}
+
+/* ========================================================
+   8. GUESTBOOK FIELD PACKETS
+   ======================================================== */
+.comment-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.guestbook-input, .journal-textarea {
+    width: 100%;
+    background: #00061a;
+    border: 1px solid #0055ff;
+    color: #ffffff;
+    font-family: monospace;
+    padding: 8px;
+    font-size: 12px;
+    outline: none;
+}
+
+.journal-textarea {
+    height: 70px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #001f5c;
+    border: 1px solid #0055ff;
+    color: #ffffff;
+    font-family: monospace;
+    padding: 6px;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #0055ff;
+    color: #000000;
+}
+
+.guestbook-log-stream {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #002266;
+    background: #000105;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.log-entry-item {
+    background: #000721;
+    border-left: 2px solid #0055ff;
+    padding: 6px;
+    font-size: 11px;
+}
+
+.log-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+/* ========================================================
+   9. STRUCTURAL STITCH-LINED CUBE FOOTER & GATE PANELS
+   ======================================================== */
+.stitched-cube-footer {
+    background-color: #010a21;
+    border: 2px dashed #0044cc;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #a0b0cb;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: inset 0 0 10px #000;
+}
+
+.stitched-cube-footer a {
+    color: #66a3ff;
+}
+
+@media (min-width: 576px) {
+    .stitched-cube-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-left { max-width: 65%; }
+}
+
+.secret-prompt-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,1,5,0.9);
+    z-index: 25000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secret-prompt-card {
+    background: #000924;
+    border: 1px dashed #0055ff;
+    padding: 20px;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 0 15px #002266;
+}
+
+.secret-prompt-card h3 {
+    color: #66a3ff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.secret-prompt-card p {
+    font-size: 12px;
+    color: #cccccc;
+    margin-bottom: 18px;
+}
+
+.secret-prompt-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.secret-link {
+    color: #2288ff;
+    text-decoration: underline;
+}
+
+.banner-stack {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.media-banner {
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #0044cc;
+}
+
+.stamp-grid {
+    padding: 10px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.stamp-grid img {
+    width: 88px;
+    height: 31px;
+    image-rendering: pixelated;
+}
+
+.gate-btn-alt {
+    background: #0d0101 !important;
+    border-color: #4477cc !important;
+    color: #a0b0cb !important;
+}

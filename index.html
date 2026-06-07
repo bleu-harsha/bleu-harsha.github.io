@@ -1,284 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>BLUE_</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <style>
-     body {
-      font-family: 'Press Start 2P', cursive;
-      color: white;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      overflow: hidden;
-    }
-    .container {
-      border: 2px solid;
-      width: 55%;
-      max-width: 700px;
-      height: 80%;
-      max-height: 750px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.75);
-      opacity: 0.75;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-sizing: border-box;
-      position: relative;
-      border-radius: 15px;
-      overflow-y: auto; /* Enables scrolling */
-    }
-    /* Scrollbar styling */
-    .container::-webkit-scrollbar {
-      width: 10px;
-    }
-    .container::-webkit-scrollbar-thumb {
-      background-color: blue; /* Blue scrollbar square */
-      border-radius: 5px;
-    }
-    .container::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.5); /* Translucent scrollbar track */
-    }
-
-    .banner {
-      width: 100%;
-      height: 150px;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 20px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      border-radius: 15px 15px 0 0;
-    }
-    .square {
-      background-color: rgba(0, 0, 0, 1);
-      width: 90%;
-      max-width: 550px;
-      padding: 20px;
-      opacity: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-sizing: border-box;
-      position: relative;
-      margin-top: 150px; 
-      overflow: hidden;
-      border-radius: 15px;
-    }
-    h1 {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 60px;
-      text-shadow: 0 0 10px #66d9ef;
-      transition: text-shadow 0.3s;
-    }
-    h1:hover {
-      text-shadow: 0 0 25px #66d9ef;
-    }
-    p, h2 {
-      font-size: 10px;
-       line-height: 1.6;
-    }
-    .about-me {
-      margin-top: 30px;
-    }
-    .about-me h2 {
-      font-size: 16px;
-      margin: 10px 0;
-    }
-    .spoiler-section {
-      position: static;
-    }
-    .spoiler-content {
-      background: gray;
-      color: white;
-      padding: 10px;
-      border: 1px solid lightgray;
-      font-size: 8px;
-      list-style-type: disc;
-      padding-left: 20px;
-      display: block;
-    }
-    .spoiler-content li {
-      margin: 2px 0;
-    }
-    .social-links {
-      margin-top: 20px;
-      opacity: 0.75;
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 10px;
-      width: 100%;
-      text-align: center;
-      box-sizing: border-box;
-    }
-    .social-links a {
-      text-decoration: none;
-      color: white;
-      transition: color 0.3s, text-shadow 0.3s, filter 0.3s;
-      display: inline-flex;
-      align-items: center;
-      margin: 0 10px;
-      font-size: 14px;
-    }
-    .social-links a:hover {
-      color: #66d9ef;
-      text-shadow: 0 0 10px #66d9ef;
-      filter: brightness(1.5);
-    }
-    .social-links i {
-      font-size: 20px;
-      margin-right: 5px;
-    }
-    .profile-pic {
-      width: 100px;
-      height: 100px;
-      position: fixed;
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 0 10px rgba(102, 217, 239, 0.8);
-      margin-top: -60px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      z-index: 1;
-      opacity:10
-    }
-    .profile-pic:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(102, 217, 239, 1);
-    }
-    .username {
-     text-align: center;
-     margin-top: 15px;
-     font-size: 12px;
-     text-shadow: 0 0 5px #66d9ef;
-      transition: text-shadow 0.3s;
-   }
-    .username:hover {
-      text-shadow: 0 0 10px #66d9ef;
-    }
-    .lived-since {
-      font-size: 2px;
-      text-align: center;
-      margin-top: 10px;
-    }
-    @media (max-width: 600px) {
-      .container {
-        width: 95%;
-        height: auto;
-      }
-      .social-links a {
-        font-size: 12px;
-      }
-      .social-links i {
-        font-size: 18px;
-        margin-right: 3px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>harsha_isblue // profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script>
-    const wallpapers = [
-      
-      'https://i.pinimg.com/originals/86/a7/68/86a768fb53edb0f9565285bdbe365ee7.gif'
-    ];
-    const randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-    document.body.style.backgroundImage = `url(${randomWallpaper})`;
 
-    const banners = [
-      'https://i.pinimg.com/736x/2a/41/b7/2a41b7b579ff78ee9b3d8c040dd9814d.jpg',
-      'https://i.pinimg.com/564x/c7/8e/24/c78e2418c546751c1e82e1323ba804d6.jpg',
-      'https://i.pinimg.com/564x/ff/18/08/ff180896bf024353d41301ca2e623603.jpg',
-      'https://i.pinimg.com/564x/fc/61/9a/fc619a121f456acea795a1bc817ef71a.jpg',
-      'https://i.pinimg.com/564x/8a/00/da/8a00dacb720df522489b4a68e7a339d8.jpg'
-    ];
-    const randomBanner = banners[Math.floor(Math.random() * banners.length)];
+    <div class="artist-credit-badge">
+        thanks <a href="https://x.com/AnasAbdin?lang=en" target="_blank">@AnasAbdin</a>
+    </div>
 
-    const container = document.createElement('div');
-    container.className = 'container';
+    <div id="gate-screen" class="gate-overlay">
+        <div class="gate-card">
+            <h2 class="gate-title">WARNING</h2>
+            <p class="gate-text">This profile contains flashing graphics, heavy scanlines, and loud interactive background audio processing.</p>
+            <div class="gate-actions-row">
+                <button id="enter-btn" class="gate-btn">ENTER WITH AUDIO</button>
+                <button id="enter-muted-btn" class="gate-btn gate-btn-alt">ENTER MUTED</button>
+            </div>
+        </div>
+    </div>
 
-    const banner = document.createElement('div');
-    banner.className = 'banner';
-    banner.style.backgroundImage = `url(${randomBanner})`;
-    container.appendChild(banner);
+    <video id="bg-video" loop style="display:none; position:absolute; width:0; height:0; pointer-events:none;">
+        <source src="assets/song.mp4" type="video/mp4">
+    </video>
 
-    const square = document.createElement('div');
-    square.className = 'square';
+    <div class="scanline-blanket"></div>
 
-    const profilePic = document.createElement('img');
-    profilePic.src = 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrEYFd_1iTEGnP1HmIgskow01-G74a-mUBX0th99V4Oixfi9q7';
-    profilePic.className = 'profile-pic';
-    square.appendChild(profilePic);
+    <div class="container main-layout">
+        
+        <header class="profile-header">
+            <nav class="top-nav">
+                <a href="index.html">Home</a> | <a href="https://www.youtube.com/watch?v=QDia3e12czc">Browse</a> | <a href="#blog">Blog</a>
+            </nav>
+        </header>
 
-    const h1 = document.createElement('h1');
-    h1.textContent = 'BLUE_';
-    square.appendChild(h1);
+        <div class="blue-fire-divider-track"></div>
 
-    const username = document.createElement('div');
-    username.className = 'username';
-    username.textContent = '@blue_clouds';
-    square.appendChild(username);
+        <div class="layout-grid">
+            
+            <section class="col-left">
+                <div class="box profile-identity-box">
+                    <div class="id-flex-content">
+                        <div class="avatar-frame alignment-wash">
+                            <img src="assets/pfp.jpg" alt="User PFP">
+                        </div>
+                        <div class="ps2-disc-wrapper-fixed">
+                            <img src="assets/song.png" class="spinning-disc" alt="PS2 Disc Graphic">
+                        </div>
+                        <div class="meta-disc-graphics">
+                            <p class="geo-text">17, Bengaluru</p>
+                        </div>
+                    </div>
+                    <div class="mood-bar">
+                        <p><strong>Mood:</strong> chill</p>
+                        <p class="view-links">View my: <a href="#blog">Blog</a> | <a href="#">Forum Topics</a></p>
+                    </div>
+                </div>
 
-    const aboutMeSection = document.createElement('div');
-    aboutMeSection.className = 'about-me';
+                <div class="box matrix-table-box glow-target-interests">
+                    <h2>harsha_isblue's Interests</h2>
+                    <table class="interests-table">
+                        <tr>
+                            <td class="cell-label">General</td>
+                            <td class="cell-data">☆video games𖦹 ☆chainsaw man𖦹 ☆berserk𖦹 ☆eternal sunshine of my spotless mind𖦹 ☆cyberpunk 2077𖦹 ☆scott pilgrim𖦹  ☆minecraft𖦹 ☆linux𖦹 ☆roblox𖦹 ☆absurdism𖦹  ☆how bad i am at chess𖦹 ☆cats𖦹 ☆yearn 𖦹  <a href="#date-req1992" class="secret-link">☆dates𖦹</a>  ☆ fashion 𖦹  ☆sleep𖦹 ☆penguins𖦹 ☆how we're doomed as a species𖦹 </td>
+                        </tr>
+                        <tr>
+                            <td class="cell-label">Music</td>
+                            <td class="cell-data">
+                                ☆<img src="assets/thesmiths.gif" class="alignment-wash">"☆kanye west𖦹 ☆anything with dhanush𖦹 ☆games with a cool songs𖦹 ☆tame imapala𖦹 ☆green day𖦹  ☆basically 
+                                <a href="https://open.spotify.com/playlist/27g5xZTIGuZ7RDFM86JCzL?si=df37ca1a676e4eb8" target="_blank">my 2 spotify</a> 
+                                <a href="https://open.spotify.com/playlist/5OwmzKHl4z7phRB3LkdgDl?si=2cfd3f12e9df4e62" target="_blank">playlists</a>𖦹
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cell-label">Movies</td>
+                            <td class="cell-data">☆ eternal sunshine of the spotless mind 𖦹 500 days of summer 𖦹 her 𖦹 blade runner 2049 𖦹 fallen angels 𖦹 passengers 𖦹 no hard feelings 𖦹 mr. & mrs. smith 𖦹 scott pilgrim vs. the world 𖦹 neon genesis evangelion 𖦹 the end of evangelion 𖦹 devil may cry 𖦹 */.../* </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
 
-    const hehim = document.createElement('p');
-    hehim.textContent = 'He/Him';
-    aboutMeSection.appendChild(hehim);
+            <section class="col-right">
+                <div class="box about-me-box">
+                    <h2>About Me:</h2>
+                    <div class="inner-padding">
+                        <p class="intro-alert">SYSTEM ACTIVE // BLUE CODES INJECTED</p>
+                        <p>Welcome to my static layout hub. Building low-fidelity retro systems and custom aesthetic matrix frameworks from absolute scratch.</p>
+                        <p class="sub-header-marker">Who I'd like to meet:</p>
+                        <p>Other technical creators, modders, and programmers experimenting with retro visual assets.</p>
+                    </div>
+                </div>
 
-    const intro = document.createElement('p');
-    intro.textContent = 'weaving nocturnal dreams for the virtual sky';
-    aboutMeSection.appendChild(intro);
+                <div class="box stamps-box glow-target-stamps">
+                    <h2>Stamps</h2>
+                    <div class="stamp-grid">
+                        <div class="stamp-item">
+                            <img src="assets/abusepc.gif" class="alignment-wash" alt="Stamp 1">
+                            <img src="assets/bluecode.gif" class="alignment-wash" alt="Stamp 2">
+                        </div>
+                    </div>
+                </div>
 
-    const aboutMeText = document.createElement('p');
-    aboutMeText.innerHTML = 'Hey, I\'m Blue_. I love coding, the sky, clouds, the night and music.';
-    aboutMeSection.appendChild(aboutMeText);
+                <div class="box media-manifesto-box">
+                    <h2>Dump</h2>
+                    <div class="banner-stack">
+                        <div class="media-banner alignment-wash" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/csm.gif');"></div>
+                        <div class="media-banner alignment-wash" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/berserk.gif');"></div>
+                    </div>
+                </div>
 
-    const spoilerSection = document.createElement('div');
-    spoilerSection.className = 'spoiler-section';
+                <div class="box doom-unwashed-container">
+                    <h2>Doom Engine Link</h2>
+                    <div class="doom-wrapper">
+                        <iframe src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos" class="doom-frame" allowfullscreen></iframe>
+                    </div>
+                    <div class="doom-controls-helper">Interact directly using mouse click / WASD and Space parameters.</div>
+                </div>
 
-    const spoilerContent = document.createElement('div');
-    spoilerContent.className = 'spoiler-content';
-    spoilerContent.innerHTML = '<ul><li><i>Classic INFP-T</i></li><li>2 reasons to live and a million reasons to die.</li><li><i>life is a party and, I\'m the piñata</i></li></ul>';
-    spoilerSection.appendChild(spoilerContent);
+                <div class="box journal-box">
+                    <h2>Cool people type here (Guestbook)</h2>
+                    <div class="inner-padding">
+                        <p class="instruction-label">Leave an active signature transmission on my screen layer:</p>
+                        <div class="comment-inputs">
+                            <input type="text" id="guest-name" class="guestbook-input" placeholder="Your Handle / Name">
+                            <textarea id="guest-msg" class="journal-textarea" placeholder="Type comments"></textarea>
+                            <button id="submit-comment-btn" class="submit-btn">SUBMIT</button>
+                        </div>
+                        <div class="guestbook-log-stream" id="comments-display-feed">
+                            <div class="loading-status">Connecting to database pipeline...</div>
+                        </div>
+                    </div>
+                </div>
 
-    const livedSince = document.createElement('h2');
-    livedSince.className = 'lived-since';
-    livedSince.textContent = 'Living since : December, 2008';
-    spoilerSection.appendChild(livedSince);
+                <div id="blog" class="box blog-container-box">
+                    <h2>harsha_isblue's Latest Blog Entries [<a href="#">View Blog</a>]</h2>
+                    <div class="inner-padding">
+                        <div class="blog-entry-card">
+                            <h3 class="blog-entry-title">Initializing the Grid Framework <span class="blog-date">(June 07, 2026)</span></h3>
+                            <p class="blog-entry-body">The blue canvas update is fully online. Swapping over layout engines, cleaning tag hierarchies, and tracking live comment pipelines.</p>
+                            <p class="blog-entry-footer"><a href="#">Read More</a> | <a href="#">Comments (0)</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    aboutMeSection.appendChild(spoilerSection);
-    square.appendChild(aboutMeSection);
-    container.appendChild(square);
+        </div>
 
-    const socialLinks = document.createElement('div');
-    socialLinks.className = 'social-links';
+        <div id="date-portal-overlay" class="secret-prompt-overlay" style="display: none;">
+            <div class="secret-prompt-card">
+                <h3>Incoming Request Authentication</h3>
+                <p>Allow connection request inside #date space context loop?</p>
+                <div class="secret-prompt-actions">
+                    <button id="date-accept-btn" class="gate-btn">ACCEPT CONNECTION</button>
+                    <button id="date-decline-btn" class="gate-btn gate-btn-alt">TERMINATE BREAK</button>
+                </div>
+            </div>
+        </div>
 
-    const socialMedia = [
-      { href: 'https://github.com/bleu-harsha', class: 'fab fa-github', text: 'GitHub' },
-      { href: 'https://www.instagram.com/blue_harsha/', class: 'fab fa-instagram', text: 'Instagram' },
-    ];
+        <div class="blue-fire-divider-track"></div>
 
-    socialMedia.forEach(media => {
-      const a = document.createElement('a');
-      a.href = media.href;
-      a.target = '_blank';
-      const icon = document.createElement('i');
-      icon.className = media.class;
-      a.appendChild(icon);
-      a.appendChild(document.createTextNode(media.text));
-      socialLinks.appendChild(a);
-    });
+        <footer class="stitched-cube-footer">
+            <div class="footer-left">the website was inspired by myspace websites and vibe-coded and i not proud of it</div>
+            <div class="footer-right">wallpaper by <a href="https://x.com/AnasAbdin?lang=en" target="_blank">@AnasAbdin</a></div>
+        </footer>
+    </div>
 
-    container.appendChild(socialLinks);
-    document.body.appendChild(container);
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
